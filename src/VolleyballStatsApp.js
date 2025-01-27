@@ -33,19 +33,13 @@ const VolleyballStatsApp = () => {
     );
   };
 
-  const handleResetPoints = () => {
-    setPlayers((prevPlayers) =>
-      prevPlayers.map((player) => ({
-        ...player,
-        attackPoints: 0,
-        blockPoints: 0,
-        acePoints: 0,
-      }))
-    );
-  };
+  const totalAttackPoints = players.reduce((total, player) => total + player.attackPoints, 0);
+  const totalBlockPoints = players.reduce((total, player) => total + player.blockPoints, 0);
+  const totalAcePoints = players.reduce((total, player) => total + player.acePoints, 0);
 
   return (
     <div className="app-container">
+    <h1>Volleyball Game Stats</h1>
       <div className="add-player">
         <input
           type="text"
@@ -62,6 +56,7 @@ const VolleyballStatsApp = () => {
             <span>Attacks: {player.attackPoints}</span>
             <span>Blocks: {player.blockPoints}</span>
             <span>Aces: {player.acePoints}</span>
+            <span>Total Points: {player.attackPoints + player.blockPoints + player.acePoints}</span>
             <button onClick={() => handleAddPoint(index, "attackPoints")}>
               Attack
             </button>
@@ -74,8 +69,7 @@ const VolleyballStatsApp = () => {
           </div>
         ))}
       </div>
-      <button className="reset-points" onClick={handleResetPoints}>Reset Points</button>
-    </div>
+      </div>    
   );
 };
 
