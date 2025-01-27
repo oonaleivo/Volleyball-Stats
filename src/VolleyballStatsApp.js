@@ -35,19 +35,17 @@ const VolleyballStatsApp = () => {
     };
 
     const handleSaveStats = () => {
-        const stats = players.map((player) => ({
-            name: player.name,
-            attackPoints: player.attackPoints,
-            blockPoints: player.blockPoints,
-            acePoints: player.acePoints,
-            totalPoints: player.attackPoints + player.blockPoints + player.acePoints,
-        }));
-
-        const statsBlob = new Blob([JSON.stringify(stats, null, 2)], {
-            type: "application/json",
-        });
-        saveAs(statsBlob, "volleyball-stats.json");
-    };
+        const stats = players.map(player => (
+          `Name: ${player.name}\n` +
+          `Attacks: ${player.attackPoints}\n` +
+          `Blocks: ${player.blockPoints}\n` +
+          `Aces: ${player.acePoints}\n` +
+          `Total Points: ${player.attackPoints + player.blockPoints + player.acePoints}\n`
+        )).join('\n');
+    
+        const blob = new Blob([stats], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, "volleyball_stats.txt");
+      };
 
         return (
             <div className="app-container">

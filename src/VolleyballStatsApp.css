@@ -104,4 +104,18 @@
       flex: 1 1 30%;
       margin: 5px 0;
     }
+
+    .save-stats {
+        padding: 10px 20px;
+        border: none;
+        background-color: #17a2b8;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      
+      .save-stats:hover {
+        background-color: #138496;
+      }
   }
