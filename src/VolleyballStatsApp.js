@@ -59,9 +59,9 @@ const VolleyballStatsApp = () => {
         {players.map((player, index) => (
           <div key={index} className="player-row">
             <span>{player.name}</span>
-            <span>Attack Points: {player.attackPoints}</span>
-            <span>Block Points: {player.blockPoints}</span>
-            <span>Ace Points: {player.acePoints}</span>
+            <span>Attacks: {player.attackPoints}</span>
+            <span>Blocks: {player.blockPoints}</span>
+            <span>Aces: {player.acePoints}</span>
             <button onClick={() => handleAddPoint(index, "attackPoints")}>
               Attack
             </button>

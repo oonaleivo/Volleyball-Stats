@@ -11,6 +11,8 @@
     margin-bottom: 20px;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .add-player input {
@@ -50,6 +52,7 @@
     background-color: white;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
   }
   
   .player-row span {
@@ -64,6 +67,7 @@
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    margin: 5px 0;
   }
   
   .player-row button:hover {
@@ -82,88 +86,22 @@
   
   button.reset-points:hover {
     background-color: #c82333;
-  }.app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
-}
-
-.add-player {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.add-player input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 200px;
-}
-
-.add-player button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.add-player button:hover {
-  background-color: #0056b3;
-}
-
-.players-list {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 600px;
-}
-
-.player-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: white;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.player-row span {
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.player-row button {
-  padding: 5px 10px;
-  border: none;
-  background-color: #28a745;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.player-row button:hover {
-  background-color: #218838;
-}
-
-button.reset-points {
-  padding: 10px 20px;
-  border: none;
-  background-color: #dc3545;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button.reset-points:hover {
-  background-color: #c82333;
-}
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 600px) {
+    .player-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .player-row span {
+      flex: 1 1 100%;
+      margin-bottom: 5px;
+    }
+  
+    .player-row button {
+      flex: 1 1 30%;
+      margin: 5px 0;
+    }
+  }
